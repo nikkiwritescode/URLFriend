@@ -26,7 +26,7 @@
     },
 		{
 			"Symbol":"%26",
-			"TextToReplaceItWith":"&"
+			"TextToReplaceItWith":"&&"
     },
 		{
 			"Symbol":"%27",
@@ -103,6 +103,14 @@
 		{
 			"Symbol":"%5F",
 			"TextToReplaceItWith":"_"
+		},
+		{
+			"Symbol":"amp;",
+			"TextToReplaceItWith":"&&"
+		},
+		{
+			"Symbol":"_-_",
+			"TextToReplaceItWith":"'"
 		}
 	]
 }

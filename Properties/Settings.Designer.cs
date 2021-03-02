@@ -67,5 +67,29 @@ namespace URLfriend.Properties {
                 this["CharacterReferenceSettingText"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int NumberOfTimesToRemoveDoubleSpaces {
+            get {
+                return ((int)(this["NumberOfTimesToRemoveDoubleSpaces"]));
+            }
+            set {
+                this["NumberOfTimesToRemoveDoubleSpaces"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RunAdditionalTimes {
+            get {
+                return ((bool)(this["RunAdditionalTimes"]));
+            }
+            set {
+                this["RunAdditionalTimes"] = value;
+            }
+        }
     }
 }

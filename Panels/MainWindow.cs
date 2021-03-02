@@ -144,12 +144,14 @@ namespace URLfriend.Panels
 
         private void ConfigureParenthesisTextRemoval_Click(object sender, EventArgs e)
         {
-
+            var configureParenthesisTextRemovalPanel = new ConfigureParenthesisTextRemovalPanel();
+            configureParenthesisTextRemovalPanel.Show();
         }
 
         private void ConfigureDoubleSpaceRemovalButton_Click(object sender, EventArgs e)
         {
-
+            var configureDoubleSpaceRemovalPanel = new ConfigureDoubleSpaceRemovalPanel();
+            configureDoubleSpaceRemovalPanel.Show();
         }
     }
 }
