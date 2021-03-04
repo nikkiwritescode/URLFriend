@@ -20,20 +20,13 @@ namespace URLfriend.IO
                 if (urlPath == null) continue;
                 var filename = Path.GetFileName(urlPath);
 
-                if (window.removeParenthesisCheckbox.Checked)
+                if (Settings.Default.HandleTextBetweenParenthesis)
                 {
-                    filename = DataManipulation.RemoveTextFromInsideParenthesis(filename, "Disc 1");
+                    filename = DataManipulation.HandleTextFromInsideParenthesis(filename);
                 }
 
-                if (window.RemoveCharacterReferencesCheckbox.Checked)
+                if (Settings.Default.RemoveCharacterReferences)
                 {
-                    //foreach every record in the CharacterReferenceModelItem
-                    /*var characters = 
-                    foreach (var item in )
-                    {
-                        
-                    }*/
-
                     for (var i = 0; i < Settings.Default.CharacterReferenceSettingStatus.Length; i++)
                     {
                         if (Settings.Default.CharacterReferenceSettingStatus[i] != 1) { } //if it's not active, do nothing
@@ -46,7 +39,7 @@ namespace URLfriend.IO
                     }
                 }
 
-                if (window.RemoveSpacesCheckbox.Checked)
+                if (Settings.Default.RemoveDoubleSpaces)
                 {
                     filename = DataManipulation.RemoveExtraSpacesFromFileName(filename);
                 }

@@ -38,13 +38,13 @@ namespace URLfriend.Panels
             this.outputfilename = new System.Windows.Forms.ColumnHeader();
             this.ReadFileButton = new System.Windows.Forms.Button();
             this.ReadFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.removeParenthesisCheckbox = new System.Windows.Forms.CheckBox();
+            this.handleParenthesisCheckbox = new System.Windows.Forms.CheckBox();
             this.RemoveCharacterReferencesCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBoxFileNamePadding = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.RemoveSpacesCheckbox = new System.Windows.Forms.CheckBox();
             this.ConfigureCharacterReferencesButton = new System.Windows.Forms.Button();
-            this.ConfigureParenthesisTextRemoval = new System.Windows.Forms.Button();
+            this.ConfigureParenthesisTextHandlingButton = new System.Windows.Forms.Button();
             this.ConfigureDoubleSpaceRemovalButton = new System.Windows.Forms.Button();
             this.DownloadAllButton = new System.Windows.Forms.Button();
             this.ClearListButton = new System.Windows.Forms.Button();
@@ -127,18 +127,19 @@ namespace URLfriend.Panels
             // 
             this.ReadFileDialog.FileName = "openFileDialog1";
             // 
-            // removeParenthesisCheckbox
+            // handleParenthesisCheckbox
             // 
-            this.removeParenthesisCheckbox.AutoSize = true;
-            this.removeParenthesisCheckbox.Checked = true;
-            this.removeParenthesisCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.removeParenthesisCheckbox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.removeParenthesisCheckbox.Location = new System.Drawing.Point(3, 33);
-            this.removeParenthesisCheckbox.Name = "removeParenthesisCheckbox";
-            this.removeParenthesisCheckbox.Size = new System.Drawing.Size(204, 24);
-            this.removeParenthesisCheckbox.TabIndex = 2;
-            this.removeParenthesisCheckbox.Text = "Remove Text Between Parenthesis";
-            this.removeParenthesisCheckbox.UseVisualStyleBackColor = true;
+            this.handleParenthesisCheckbox.AutoSize = true;
+            this.handleParenthesisCheckbox.Checked = true;
+            this.handleParenthesisCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.handleParenthesisCheckbox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.handleParenthesisCheckbox.Location = new System.Drawing.Point(3, 33);
+            this.handleParenthesisCheckbox.Name = "handleParenthesisCheckbox";
+            this.handleParenthesisCheckbox.Size = new System.Drawing.Size(199, 24);
+            this.handleParenthesisCheckbox.TabIndex = 2;
+            this.handleParenthesisCheckbox.Text = "Handle Text Between Parenthesis";
+            this.handleParenthesisCheckbox.UseVisualStyleBackColor = true;
+            this.handleParenthesisCheckbox.CheckedChanged += new System.EventHandler(this.removeParenthesisCheckbox_CheckedChanged);
             // 
             // RemoveCharacterReferencesCheckbox
             // 
@@ -148,10 +149,11 @@ namespace URLfriend.Panels
             this.RemoveCharacterReferencesCheckbox.Dock = System.Windows.Forms.DockStyle.Left;
             this.RemoveCharacterReferencesCheckbox.Location = new System.Drawing.Point(3, 3);
             this.RemoveCharacterReferencesCheckbox.Name = "RemoveCharacterReferencesCheckbox";
-            this.RemoveCharacterReferencesCheckbox.Size = new System.Drawing.Size(183, 24);
+            this.RemoveCharacterReferencesCheckbox.Size = new System.Drawing.Size(178, 24);
             this.RemoveCharacterReferencesCheckbox.TabIndex = 3;
-            this.RemoveCharacterReferencesCheckbox.Text = "Remove Character References";
+            this.RemoveCharacterReferencesCheckbox.Text = "Handle Character References";
             this.RemoveCharacterReferencesCheckbox.UseVisualStyleBackColor = true;
+            this.RemoveCharacterReferencesCheckbox.CheckedChanged += new System.EventHandler(this.RemoveCharacterReferencesCheckbox_CheckedChanged);
             // 
             // groupBoxFileNamePadding
             // 
@@ -169,10 +171,10 @@ namespace URLfriend.Panels
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel1.Controls.Add(this.RemoveSpacesCheckbox, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.removeParenthesisCheckbox, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.handleParenthesisCheckbox, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.RemoveCharacterReferencesCheckbox, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.ConfigureCharacterReferencesButton, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.ConfigureParenthesisTextRemoval, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.ConfigureParenthesisTextHandlingButton, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.ConfigureDoubleSpaceRemovalButton, 1, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 22);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -195,35 +197,39 @@ namespace URLfriend.Panels
             this.RemoveSpacesCheckbox.TabIndex = 4;
             this.RemoveSpacesCheckbox.Text = "Remove Double Spaces";
             this.RemoveSpacesCheckbox.UseVisualStyleBackColor = true;
+            this.RemoveSpacesCheckbox.CheckedChanged += new System.EventHandler(this.RemoveSpacesCheckbox_CheckedChanged);
             // 
             // ConfigureCharacterReferencesButton
             // 
             this.ConfigureCharacterReferencesButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ConfigureCharacterReferencesButton.Location = new System.Drawing.Point(217, 3);
+            this.ConfigureCharacterReferencesButton.Location = new System.Drawing.Point(215, 1);
+            this.ConfigureCharacterReferencesButton.Margin = new System.Windows.Forms.Padding(1);
             this.ConfigureCharacterReferencesButton.Name = "ConfigureCharacterReferencesButton";
-            this.ConfigureCharacterReferencesButton.Size = new System.Drawing.Size(110, 24);
+            this.ConfigureCharacterReferencesButton.Size = new System.Drawing.Size(114, 28);
             this.ConfigureCharacterReferencesButton.TabIndex = 5;
             this.ConfigureCharacterReferencesButton.Text = "Configure";
             this.ConfigureCharacterReferencesButton.UseVisualStyleBackColor = true;
             this.ConfigureCharacterReferencesButton.Click += new System.EventHandler(this.ConfigureCharacterReferencesButton_Click);
             // 
-            // ConfigureParenthesisTextRemoval
+            // ConfigureParenthesisTextHandlingButton
             // 
-            this.ConfigureParenthesisTextRemoval.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ConfigureParenthesisTextRemoval.Location = new System.Drawing.Point(217, 33);
-            this.ConfigureParenthesisTextRemoval.Name = "ConfigureParenthesisTextRemoval";
-            this.ConfigureParenthesisTextRemoval.Size = new System.Drawing.Size(110, 24);
-            this.ConfigureParenthesisTextRemoval.TabIndex = 6;
-            this.ConfigureParenthesisTextRemoval.Text = "Configure";
-            this.ConfigureParenthesisTextRemoval.UseVisualStyleBackColor = true;
-            this.ConfigureParenthesisTextRemoval.Click += new System.EventHandler(this.ConfigureParenthesisTextRemoval_Click);
+            this.ConfigureParenthesisTextHandlingButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ConfigureParenthesisTextHandlingButton.Location = new System.Drawing.Point(215, 31);
+            this.ConfigureParenthesisTextHandlingButton.Margin = new System.Windows.Forms.Padding(1);
+            this.ConfigureParenthesisTextHandlingButton.Name = "ConfigureParenthesisTextHandlingButton";
+            this.ConfigureParenthesisTextHandlingButton.Size = new System.Drawing.Size(114, 28);
+            this.ConfigureParenthesisTextHandlingButton.TabIndex = 6;
+            this.ConfigureParenthesisTextHandlingButton.Text = "Configure";
+            this.ConfigureParenthesisTextHandlingButton.UseVisualStyleBackColor = true;
+            this.ConfigureParenthesisTextHandlingButton.Click += new System.EventHandler(this.ConfigureParenthesisTextRemoval_Click);
             // 
             // ConfigureDoubleSpaceRemovalButton
             // 
             this.ConfigureDoubleSpaceRemovalButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ConfigureDoubleSpaceRemovalButton.Location = new System.Drawing.Point(217, 63);
+            this.ConfigureDoubleSpaceRemovalButton.Location = new System.Drawing.Point(215, 61);
+            this.ConfigureDoubleSpaceRemovalButton.Margin = new System.Windows.Forms.Padding(1);
             this.ConfigureDoubleSpaceRemovalButton.Name = "ConfigureDoubleSpaceRemovalButton";
-            this.ConfigureDoubleSpaceRemovalButton.Size = new System.Drawing.Size(110, 25);
+            this.ConfigureDoubleSpaceRemovalButton.Size = new System.Drawing.Size(114, 29);
             this.ConfigureDoubleSpaceRemovalButton.TabIndex = 7;
             this.ConfigureDoubleSpaceRemovalButton.Text = "Configure";
             this.ConfigureDoubleSpaceRemovalButton.UseVisualStyleBackColor = true;
@@ -375,7 +381,7 @@ namespace URLfriend.Panels
         private System.Windows.Forms.ColumnHeader outputfilename;
         public System.Windows.Forms.Button ReadFileButton;
         public System.Windows.Forms.OpenFileDialog ReadFileDialog;
-        public System.Windows.Forms.CheckBox removeParenthesisCheckbox;
+        public System.Windows.Forms.CheckBox handleParenthesisCheckbox;
         public System.Windows.Forms.CheckBox RemoveCharacterReferencesCheckbox;
         public System.Windows.Forms.GroupBox groupBoxFileNamePadding;
         public System.Windows.Forms.Button DownloadAllButton;
@@ -394,7 +400,7 @@ namespace URLfriend.Panels
         public System.Windows.Forms.ToolStripMenuItem ExitMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         public System.Windows.Forms.Button ConfigureCharacterReferencesButton;
-        public System.Windows.Forms.Button ConfigureParenthesisTextRemoval;
+        public System.Windows.Forms.Button ConfigureParenthesisTextHandlingButton;
         public System.Windows.Forms.Button ConfigureDoubleSpaceRemovalButton;
         private System.Windows.Forms.FontDialog fontDialog1;
     }

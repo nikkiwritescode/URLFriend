@@ -73,7 +73,7 @@ namespace URLfriend.Theme
                 window.DownloadAllButton,
                 window.ConfigureCharacterReferencesButton,
                 window.ConfigureDoubleSpaceRemovalButton,
-                window.ConfigureParenthesisTextRemoval
+                window.ConfigureParenthesisTextHandlingButton
             };
 
             foreach (var b in buttons)

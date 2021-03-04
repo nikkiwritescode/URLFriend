@@ -37,13 +37,26 @@ namespace URLfriend.Panels
                 ApplySelectedTheme(Settings.Default.ThemeFile);
                 CheckTheMenuItemForTheNewThemeAndDeselectTheOthers();
             }
+            InitializeDataManipulationOptions();
+        }
+
+        private void InitializeDataManipulationOptions()
+        {
+            RemoveSpacesCheckbox.Checked = Settings.Default.RemoveDoubleSpaces;
+            ConfigureDoubleSpaceRemovalButton.Enabled = Settings.Default.RemoveDoubleSpaces;
+
+            RemoveCharacterReferencesCheckbox.Checked = Settings.Default.RemoveCharacterReferences;
+            ConfigureCharacterReferencesButton.Enabled = Settings.Default.RemoveCharacterReferences;
+
+            handleParenthesisCheckbox.Checked = Settings.Default.HandleTextBetweenParenthesis;
+            ConfigureParenthesisTextHandlingButton.Enabled = Settings.Default.HandleTextBetweenParenthesis;
         }
 
         private void ReadFileButton_Click(object sender, System.EventArgs e)
         {
             if (!ReadFileButtonEnabled) return;
             ReadFileDialog.Multiselect = true;
-            ReadFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            ReadFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
             if (ReadFileDialog.ShowDialog() != DialogResult.OK) return;
             FileIO.ReadTextFile(this);
         }
@@ -152,6 +165,27 @@ namespace URLfriend.Panels
         {
             var configureDoubleSpaceRemovalPanel = new ConfigureDoubleSpaceRemovalPanel();
             configureDoubleSpaceRemovalPanel.Show();
+        }
+
+        private void RemoveSpacesCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.RemoveDoubleSpaces = RemoveSpacesCheckbox.Checked;
+            ConfigureDoubleSpaceRemovalButton.Enabled = RemoveSpacesCheckbox.Checked;
+            Settings.Default.Save();
+        }
+
+        private void removeParenthesisCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.HandleTextBetweenParenthesis = handleParenthesisCheckbox.Checked;
+            ConfigureParenthesisTextHandlingButton.Enabled = handleParenthesisCheckbox.Checked;
+            Settings.Default.Save();
+        }
+
+        private void RemoveCharacterReferencesCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.RemoveCharacterReferences = RemoveCharacterReferencesCheckbox.Checked;
+            ConfigureCharacterReferencesButton.Enabled = RemoveCharacterReferencesCheckbox.Checked;
+            Settings.Default.Save();
         }
     }
 }

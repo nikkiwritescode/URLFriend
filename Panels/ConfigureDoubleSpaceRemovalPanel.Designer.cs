@@ -30,12 +30,12 @@ namespace URLfriend.Panels
         private void InitializeComponent()
         {
             this.RunMultipleTimesCheckbox = new System.Windows.Forms.CheckBox();
-            this.CancelDoubleSpaceRemovalSettings = new System.Windows.Forms.Button();
+            this.CancelDoubleSpaceRemovalSettingsButton = new System.Windows.Forms.Button();
             this.SaveDoubleSpaceRemovalSettingsButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.RunAdditionalTimesComboBox = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
+            this.DescriptionLabel = new System.Windows.Forms.Label();
+            this.RunAdditionalTimesComboBox = new URLfriend.CustomComboBox();
+            this.DescriptionGroupBox = new System.Windows.Forms.GroupBox();
+            this.DescriptionGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // RunMultipleTimesCheckbox
@@ -49,33 +49,33 @@ namespace URLfriend.Panels
             this.RunMultipleTimesCheckbox.UseVisualStyleBackColor = true;
             this.RunMultipleTimesCheckbox.CheckedChanged += new System.EventHandler(this.RunMultipleTimesCheckbox_CheckedChanged);
             // 
-            // CancelDoubleSpaceRemovalSettings
+            // CancelDoubleSpaceRemovalSettingsButton
             // 
-            this.CancelDoubleSpaceRemovalSettings.Location = new System.Drawing.Point(175, 140);
-            this.CancelDoubleSpaceRemovalSettings.Name = "CancelDoubleSpaceRemovalSettings";
-            this.CancelDoubleSpaceRemovalSettings.Size = new System.Drawing.Size(75, 23);
-            this.CancelDoubleSpaceRemovalSettings.TabIndex = 1;
-            this.CancelDoubleSpaceRemovalSettings.Text = "Cancel";
-            this.CancelDoubleSpaceRemovalSettings.UseVisualStyleBackColor = true;
-            this.CancelDoubleSpaceRemovalSettings.Click += new System.EventHandler(this.CancelDoubleSpaceRemovalSettings_Click);
+            this.CancelDoubleSpaceRemovalSettingsButton.Location = new System.Drawing.Point(175, 128);
+            this.CancelDoubleSpaceRemovalSettingsButton.Name = "CancelDoubleSpaceRemovalSettingsButton";
+            this.CancelDoubleSpaceRemovalSettingsButton.Size = new System.Drawing.Size(75, 35);
+            this.CancelDoubleSpaceRemovalSettingsButton.TabIndex = 1;
+            this.CancelDoubleSpaceRemovalSettingsButton.Text = "Cancel";
+            this.CancelDoubleSpaceRemovalSettingsButton.UseVisualStyleBackColor = true;
+            this.CancelDoubleSpaceRemovalSettingsButton.Click += new System.EventHandler(this.CancelDoubleSpaceRemovalSettings_Click);
             // 
             // SaveDoubleSpaceRemovalSettingsButton
             // 
-            this.SaveDoubleSpaceRemovalSettingsButton.Location = new System.Drawing.Point(85, 140);
+            this.SaveDoubleSpaceRemovalSettingsButton.Location = new System.Drawing.Point(85, 128);
             this.SaveDoubleSpaceRemovalSettingsButton.Name = "SaveDoubleSpaceRemovalSettingsButton";
-            this.SaveDoubleSpaceRemovalSettingsButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveDoubleSpaceRemovalSettingsButton.Size = new System.Drawing.Size(75, 35);
             this.SaveDoubleSpaceRemovalSettingsButton.TabIndex = 2;
             this.SaveDoubleSpaceRemovalSettingsButton.Text = "Save";
             this.SaveDoubleSpaceRemovalSettingsButton.UseVisualStyleBackColor = true;
             this.SaveDoubleSpaceRemovalSettingsButton.Click += new System.EventHandler(this.SaveDoubleSpaceRemovalSettingsButton_Click);
             // 
-            // label1
+            // DescriptionLabel
             // 
-            this.label1.Location = new System.Drawing.Point(6, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(309, 50);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "By default, this feature checks only for Double (2) spaces in a row. Here you can" +
+            this.DescriptionLabel.Location = new System.Drawing.Point(6, 19);
+            this.DescriptionLabel.Name = "DescriptionLabel";
+            this.DescriptionLabel.Size = new System.Drawing.Size(309, 50);
+            this.DescriptionLabel.TabIndex = 3;
+            this.DescriptionLabel.Text = "By default, this feature checks only for Double (2) spaces in a row. Here you can" +
     " configure the settings to check for triple (3), quadruple (4), or more spaces.";
             // 
             // RunAdditionalTimesComboBox
@@ -99,29 +99,29 @@ namespace URLfriend.Panels
             this.RunAdditionalTimesComboBox.TabIndex = 4;
             this.RunAdditionalTimesComboBox.Text = "2 times";
             // 
-            // groupBox1
+            // DescriptionGroupBox
             // 
-            this.groupBox1.Controls.Add(this.RunAdditionalTimesComboBox);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.RunMultipleTimesCheckbox);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(321, 110);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
+            this.DescriptionGroupBox.Controls.Add(this.RunAdditionalTimesComboBox);
+            this.DescriptionGroupBox.Controls.Add(this.DescriptionLabel);
+            this.DescriptionGroupBox.Controls.Add(this.RunMultipleTimesCheckbox);
+            this.DescriptionGroupBox.Location = new System.Drawing.Point(12, 12);
+            this.DescriptionGroupBox.Name = "DescriptionGroupBox";
+            this.DescriptionGroupBox.Size = new System.Drawing.Size(321, 110);
+            this.DescriptionGroupBox.TabIndex = 5;
+            this.DescriptionGroupBox.TabStop = false;
             // 
             // ConfigureDoubleSpaceRemovalPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(340, 186);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(340, 172);
+            this.Controls.Add(this.DescriptionGroupBox);
             this.Controls.Add(this.SaveDoubleSpaceRemovalSettingsButton);
-            this.Controls.Add(this.CancelDoubleSpaceRemovalSettings);
+            this.Controls.Add(this.CancelDoubleSpaceRemovalSettingsButton);
             this.Name = "ConfigureDoubleSpaceRemovalPanel";
             this.Text = "ConfigureDoubleSpaceRemovalPanel";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.DescriptionGroupBox.ResumeLayout(false);
+            this.DescriptionGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -129,10 +129,10 @@ namespace URLfriend.Panels
         #endregion
 
         private System.Windows.Forms.CheckBox RunMultipleTimesCheckbox;
-        private System.Windows.Forms.Button CancelDoubleSpaceRemovalSettings;
+        private System.Windows.Forms.Button CancelDoubleSpaceRemovalSettingsButton;
         private System.Windows.Forms.Button SaveDoubleSpaceRemovalSettingsButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox RunAdditionalTimesComboBox;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label DescriptionLabel;
+        private System.Windows.Forms.GroupBox DescriptionGroupBox;
+        private CustomComboBox RunAdditionalTimesComboBox;
     }
 }

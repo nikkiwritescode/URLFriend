@@ -1,5 +1,8 @@
 ﻿using System;
+using System.IO;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using URLfriend.Properties;
 
 namespace URLfriend.Utilities
 {
@@ -7,23 +10,51 @@ namespace URLfriend.Utilities
     {
         public static string RemoveExtraSpacesFromFileName(string filename)
         {
-            filename = Regex.Replace(filename, @"  ", " "); //remove double spaces
-            filename = Regex.Replace(filename, @"  ", " "); //running it multiple times to
-            filename = Regex.Replace(filename, @"  ", " "); //handle triple, quadruple etc spaces
-            filename = Regex.Replace(filename, @" .zip", ".zip"); //removing the additional space before the file extension
+            for (var i = 0; i < Settings.Default.NumberOfTimesToRemoveDoubleSpaces; i++)
+            {
+                filename = Regex.Replace(filename, @"  ", " "); //two spaces to one
+            }
+            
+            var ext = Path.GetExtension(filename);
+            filename = Regex.Replace(filename, @" " + ext, ext); //this removes the space before the file extension
             return filename;
         }
 
         public static string RemoveCharacterReferencesFromFileName(string filename, string symbol, string textToReplaceItWith)
         {
+            if (symbol == "%20")
+            {
+                textToReplaceItWith = "\u0020";
+            }
             var newFilename = Regex.Replace(filename, symbol, textToReplaceItWith);
             return newFilename;
         }
 
-        public static string RemoveTextFromInsideParenthesis(string filename, string textToRemoveParenthesisFrom)
-        { //might be pointless if the function to remove the parenthesis themselves works
-            filename = Regex.Replace(filename, $"({textToRemoveParenthesisFrom})", textToRemoveParenthesisFrom);
-            return filename;
+        public static string HandleTextFromInsideParenthesis(string filename)
+        {
+            var newFile = filename;
+            foreach (var i in Settings.Default.PhrasesToPreserveFromParenthesis)
+            {
+                var beg = "%28";
+                var mid = i;
+                var end = "%29";
+
+                if (i != null && i.Contains(" ")) { mid = i.Replace(" ", "%20"); }
+
+                newFile = newFile.Replace(beg+mid+end, mid);
+            }
+
+            foreach (var i in Settings.Default.PhrasesToRemoveFromParenthesis)
+            {
+                var beg = "%28";
+                var mid = i;
+                var end = "%29";
+
+                if (i != null && i.Contains(" ")) { mid = i.Replace(" ", "%20"); }
+
+                newFile = newFile.Replace(beg + mid + end, "");
+            }
+            return newFile;
         }
 
         public static int GetPercentage(long value, long total)

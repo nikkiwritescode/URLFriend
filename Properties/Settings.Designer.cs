@@ -83,12 +83,70 @@ namespace URLfriend.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool RunAdditionalTimes {
+        public bool RunDoubleSpaceRemovalAdditionalTimes {
             get {
-                return ((bool)(this["RunAdditionalTimes"]));
+                return ((bool)(this["RunDoubleSpaceRemovalAdditionalTimes"]));
             }
             set {
-                this["RunAdditionalTimes"] = value;
+                this["RunDoubleSpaceRemovalAdditionalTimes"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RemoveDoubleSpaces {
+            get {
+                return ((bool)(this["RemoveDoubleSpaces"]));
+            }
+            set {
+                this["RemoveDoubleSpaces"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RemoveCharacterReferences {
+            get {
+                return ((bool)(this["RemoveCharacterReferences"]));
+            }
+            set {
+                this["RemoveCharacterReferences"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool HandleTextBetweenParenthesis {
+            get {
+                return ((bool)(this["HandleTextBetweenParenthesis"]));
+            }
+            set {
+                this["HandleTextBetweenParenthesis"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection PhrasesToPreserveFromParenthesis {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["PhrasesToPreserveFromParenthesis"]));
+            }
+            set {
+                this["PhrasesToPreserveFromParenthesis"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection PhrasesToRemoveFromParenthesis {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["PhrasesToRemoveFromParenthesis"]));
+            }
+            set {
+                this["PhrasesToRemoveFromParenthesis"] = value;
             }
         }
     }

@@ -72,9 +72,6 @@ namespace URLfriend.Panels
         {
             CharacterReferenceListView.Items.Clear();
             var arr = new string[3];
-            var symbolList =
-                JSONHandler.LoadCharacterReferences(Application.StartupPath + "data\\" + "DefaultSymbolList.json");
-
             for (var i = 0; i < Settings.Default.CharacterReferenceSettingStatus.Length; i++)
             {
                 arr[0] = Settings.Default.CharacterReferenceSettingStatus[i] is 0 ? @"Disabled" :
@@ -82,6 +79,7 @@ namespace URLfriend.Panels
 
                 arr[1] = Settings.Default.CharacterReferenceSettingSymbol[i]; //Symbol Column
                 arr[2] = Settings.Default.CharacterReferenceSettingText[i]; //Text to replace it with Column
+
                 var newItem = new ListViewItem(arr);
                 CharacterReferenceListView.Items.Add(newItem);
             }
