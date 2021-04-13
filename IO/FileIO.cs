@@ -12,19 +12,12 @@ namespace URLfriend.IO
         {
             var arr = new string[4];
             var sr = new StreamReader(window.ReadFileDialog.OpenFile());
-
             while (!sr.EndOfStream)
             {
                 var urlPath = sr.ReadLine();
-
                 if (urlPath == null) continue;
                 var filename = Path.GetFileName(urlPath);
-
-                if (Settings.Default.HandleTextBetweenParenthesis)
-                {
-                    filename = DataManipulation.HandleTextFromInsideParenthesis(filename);
-                }
-
+                if (Settings.Default.HandleTextBetweenParenthesis) { filename = DataManipulation.HandleTextFromInsideParenthesis(filename); }
                 if (Settings.Default.RemoveCharacterReferences)
                 {
                     for (var i = 0; i < Settings.Default.CharacterReferenceSettingStatus.Length; i++)
@@ -39,20 +32,14 @@ namespace URLfriend.IO
                     }
                 }
 
-                if (Settings.Default.RemoveDoubleSpaces)
-                {
-                    filename = DataManipulation.RemoveExtraSpacesFromFileName(filename);
-                }
-
+                if (Settings.Default.RemoveDoubleSpaces) { filename = DataManipulation.RemoveExtraSpacesFromFileName(filename); }
                 arr[0] = urlPath;
                 arr[1] = "Not started"; //Status column
                 arr[2] = "-"; //Progress column
                 arr[3] = filename;
-
                 var newItem = new ListViewItem(arr);
                 window.FileNameList.Items.Add(newItem);
             }
-
             sr.Close();
         }
     }
