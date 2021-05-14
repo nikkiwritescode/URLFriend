@@ -57,10 +57,6 @@ namespace URLfriend.Theme
             window.ExitMenuItem.ForeColor = palette.TextColor.GetColor();
             window.AboutMenuItem.BackColor = palette.MenuBarColor.GetColor();
             window.AboutMenuItem.ForeColor = palette.TextColor.GetColor();
-            /*window.NavyThemeMenuItem.BackColor = palette.MenuBarColor.GetColor();
-            window.NavyThemeMenuItem.ForeColor = palette.TextColor.GetColor();
-            window.NightThemeMenuItem.BackColor = palette.MenuBarColor.GetColor();
-            window.NightThemeMenuItem.ForeColor = palette.TextColor.GetColor();*/
         }
 
         private static void SetButtonColorTheme(PaletteModel palette, MainWindow window)
@@ -117,73 +113,18 @@ namespace URLfriend.Theme
         private static void ApplyHoverLeaveColor(Control? control, ToolStripMenuItem? toolStripItem)
         {
             if (CurrentPalette == null) return;
-            
-                if (control != null)
-                {
-                    control.BackColor = CurrentPalette.ButtonColor.GetColor();
-                    control.ForeColor = CurrentPalette.TextColor.GetColor();
-                }
 
-                if (toolStripItem != null)
-                {
-                    toolStripItem.BackColor = CurrentPalette.MenuBarColor.GetColor();
-                    toolStripItem.ForeColor = CurrentPalette.TextColor.GetColor();
-                }
-        }
-
-        public static void HoverEnter(object o, System.EventArgs e)
-        {
-            switch (o.GetType().Name)
+            if (control != null)
             {
-                case "Button":
-                    ApplyHoverEnterColor((Control)o, null);
-                    break;
-                case "ToolStripMenuItem":
-                    ApplyHoverEnterColor(null, (ToolStripMenuItem)o);
-                    break;
+                control.BackColor = CurrentPalette.ButtonColor.GetColor();
+                control.ForeColor = CurrentPalette.TextColor.GetColor();
             }
-        }
 
-        private static void ApplyHoverEnterColor(Control? control, ToolStripMenuItem? toolStripItem)
-        {
-            /*switch (lightModeEnabled)
+            if (toolStripItem != null)
             {
-                case true:
-                    {
-                        if (control != null && toolStripItem == null)
-                        {
-                            /*control.BackColor = _lightButtonHoverColor;
-                            control.ForeColor = _lightTextColor;#1#
-                            break;
-                        }
-
-                        if (control == null && toolStripItem != null)
-                        {
-                            toolStripItem.BackColor = _lightButtonHoverColor;
-                            toolStripItem.ForeColor = _lightTextColor;
-                            break;
-                        }
-
-                        break;
-                    }
-
-                case false:
-                    if (control != null && toolStripItem == null)
-                    {
-                        /*control.BackColor = _darkButtonHoverColor;
-                        control.ForeColor = _darkTextColor;
-                        break;#1#
-                    }
-
-                    if (control == null && toolStripItem != null)
-                    {
-                        toolStripItem.BackColor = _darkTextColor;
-                        toolStripItem.ForeColor = _darkButtonHoverColor;
-                        break;
-                    }
-                    break;
-            }*/
-
+                toolStripItem.BackColor = CurrentPalette.MenuBarColor.GetColor();
+                toolStripItem.ForeColor = CurrentPalette.TextColor.GetColor();
+            }
         }
     }
 }
