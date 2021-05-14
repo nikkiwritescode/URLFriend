@@ -3,7 +3,7 @@
 		{
 			"Symbol":"%20",
 			"TextToReplaceItWith":" "
-    	},
+		},
 		{
 			"Symbol":"%21",
 			"TextToReplaceItWith":"!"
