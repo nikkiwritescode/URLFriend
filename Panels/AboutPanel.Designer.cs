@@ -55,7 +55,7 @@
             // 
             this.csmmNameLabel.AutoSize = true;
             this.csmmNameLabel.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.csmmNameLabel.Location = new System.Drawing.Point(142, 7);
+            this.csmmNameLabel.Location = new System.Drawing.Point(155, 7);
             this.csmmNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.csmmNameLabel.Name = "csmmNameLabel";
             this.csmmNameLabel.Size = new System.Drawing.Size(142, 25);
@@ -65,7 +65,7 @@
             // companyLabel
             // 
             this.companyLabel.AutoSize = true;
-            this.companyLabel.Location = new System.Drawing.Point(142, 64);
+            this.companyLabel.Location = new System.Drawing.Point(155, 64);
             this.companyLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.companyLabel.Name = "companyLabel";
             this.companyLabel.Size = new System.Drawing.Size(129, 15);
@@ -86,22 +86,22 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(115, 32);
+            this.label1.Location = new System.Drawing.Point(117, 32);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(189, 17);
+            this.label1.Size = new System.Drawing.Size(213, 17);
             this.label1.TabIndex = 4;
-            this.label1.Text = "A simple downloader app.";
+            this.label1.Text = "A simple file downloader app.";
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(157, 79);
+            this.linkLabel1.Location = new System.Drawing.Point(122, 79);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(105, 15);
+            this.linkLabel1.Size = new System.Drawing.Size(201, 15);
             this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "https://nikkums.io";
+            this.linkLabel1.Text = "https://github.com/nikkiwritescode/";
             // 
             // logoLight
             // 
@@ -117,7 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(311, 155);
+            this.ClientSize = new System.Drawing.Size(335, 155);
             this.Controls.Add(this.logoLight);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
