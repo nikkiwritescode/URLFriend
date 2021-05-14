@@ -1,4 +1,4 @@
-﻿using URLfriend.FileList;
+﻿using URLfriend.UI;
 
 namespace URLfriend.Panels
 {
@@ -31,7 +31,7 @@ namespace URLfriend.Panels
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            this.FileNameList = new URLfriend.FileList.BufferedListView();
+            this.FileNameList = new BufferedListView();
             this.url = new System.Windows.Forms.ColumnHeader();
             this.Status = new System.Windows.Forms.ColumnHeader();
             this.progress = new System.Windows.Forms.ColumnHeader();

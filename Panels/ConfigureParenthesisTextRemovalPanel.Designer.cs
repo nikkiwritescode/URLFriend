@@ -1,5 +1,4 @@
-﻿
-using URLfriend.FileList;
+﻿using URLfriend.UI;
 
 namespace URLfriend.Panels
 {
@@ -31,7 +30,7 @@ namespace URLfriend.Panels
         /// </summary>
         private void InitializeComponent()
         {
-            this.PhraseToPreserveListForParenthesisPanel = new URLfriend.FileList.BufferedListView();
+            this.PhraseToPreserveListForParenthesisPanel = new BufferedListView();
             this.PhraseHeader = new System.Windows.Forms.ColumnHeader();
             this.AddPhraseToPreserveButton = new System.Windows.Forms.Button();
             this.RemovePhraseToPreserveButton = new System.Windows.Forms.Button();
@@ -44,7 +43,7 @@ namespace URLfriend.Panels
             this.ClearPhraseToRemoveListButton = new System.Windows.Forms.Button();
             this.RemovePhraseToRemoveButton = new System.Windows.Forms.Button();
             this.PhraseToRemoveLabel = new System.Windows.Forms.Label();
-            this.PhraseToRemoveListForParenthesisPanel = new URLfriend.FileList.BufferedListView();
+            this.PhraseToRemoveListForParenthesisPanel = new BufferedListView();
             this.PhrasesToRemoveHeader = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 

@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using URLfriend.Theme;
 
-namespace URLfriend.FileList
+namespace URLfriend.UI
 {
     public static class FileListLogic
     {

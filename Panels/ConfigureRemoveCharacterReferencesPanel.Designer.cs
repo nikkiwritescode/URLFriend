@@ -1,5 +1,4 @@
-﻿
-using URLfriend.FileList;
+﻿using URLfriend.UI;
 
 namespace URLfriend.Panels
 {
@@ -33,7 +32,7 @@ namespace URLfriend.Panels
         {
             this.EnableSelectedRuleButton = new System.Windows.Forms.Button();
             this.DisableSelectedRuleButton = new System.Windows.Forms.Button();
-            this.CharacterReferenceListView = new URLfriend.FileList.BufferedListView();
+            this.CharacterReferenceListView = new BufferedListView();
             this.IsEnabledHeader = new System.Windows.Forms.ColumnHeader();
             this.SymbolHeader = new System.Windows.Forms.ColumnHeader();
             this.ReplaceTextHeader = new System.Windows.Forms.ColumnHeader();

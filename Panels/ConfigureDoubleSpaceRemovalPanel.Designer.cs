@@ -1,4 +1,6 @@
 ﻿
+using URLfriend.UI;
+
 namespace URLfriend.Panels
 {
     partial class ConfigureDoubleSpaceRemovalPanel
@@ -33,7 +35,7 @@ namespace URLfriend.Panels
             this.CancelDoubleSpaceRemovalSettingsButton = new System.Windows.Forms.Button();
             this.SaveDoubleSpaceRemovalSettingsButton = new System.Windows.Forms.Button();
             this.DescriptionLabel = new System.Windows.Forms.Label();
-            this.RunAdditionalTimesComboBox = new URLfriend.CustomComboBox();
+            this.RunAdditionalTimesComboBox = new CustomComboBox();
             this.DescriptionGroupBox = new System.Windows.Forms.GroupBox();
             this.DescriptionGroupBox.SuspendLayout();
             this.SuspendLayout();
