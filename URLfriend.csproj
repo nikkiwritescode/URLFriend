@@ -6,7 +6,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <AssemblyName>URLfriend</AssemblyName>
     <RootNamespace>URLfriend</RootNamespace>
-    <ApplicationIcon>urlfriendlogolayered.ico</ApplicationIcon>
+    <ApplicationIcon>urlfriendlogo2.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -34,6 +34,10 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Theme\Icons\" />
   </ItemGroup>
 
 </Project>

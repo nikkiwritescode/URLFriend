@@ -106,7 +106,7 @@
             // logoLight
             // 
             this.logoLight.Image = ((System.Drawing.Image)(resources.GetObject("logoLight.Image")));
-            this.logoLight.Location = new System.Drawing.Point(10, 7);
+            this.logoLight.Location = new System.Drawing.Point(12, 7);
             this.logoLight.Name = "logoLight";
             this.logoLight.Size = new System.Drawing.Size(98, 98);
             this.logoLight.TabIndex = 6;

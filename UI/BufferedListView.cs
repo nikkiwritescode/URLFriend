@@ -8,7 +8,7 @@ namespace URLfriend.FileList
         public BufferedListView() { SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true); }
 
         public void RefreshColors(Color negative, Color positive, Color regular)
-        {  //regular isn't just white or black because themes!
+        { 
             var data = new ListViewItem[Items.Count];
             for (var i = 0; i < Items.Count; i++) { data[i] = Items[i]; }
 
