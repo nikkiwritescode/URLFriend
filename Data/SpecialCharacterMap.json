@@ -3,31 +3,31 @@
 		{
 			"Symbol":"%20",
 			"TextToReplaceItWith":" "
-    },
+    	},
 		{
 			"Symbol":"%21",
 			"TextToReplaceItWith":"!"
-    },
+    	},
 		{
 			"Symbol":"%22",
 			"TextToReplaceItWith":"\\"
-    },
+    	},
 		{
 			"Symbol":"%23",
 			"TextToReplaceItWith":"#"
-    },
+    	},
 		{
 			"Symbol":"%24",
 			"TextToReplaceItWith":"$"
-    },
+    	},
 		{
 			"Symbol":"%25",
 			"TextToReplaceItWith":"%"
-    },
+    	},
 		{
 			"Symbol":"%26",
 			"TextToReplaceItWith":"&&"
-    },
+    	},
 		{
 			"Symbol":"%27",
 			"TextToReplaceItWith":"'"
